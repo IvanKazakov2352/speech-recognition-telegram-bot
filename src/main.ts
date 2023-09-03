@@ -11,7 +11,7 @@ const bot = new TelegramBot(process.env.API_KEY_TELEGRAM_BOT as string, {
   polling: true,
 });
 
-bot.on("voice", async (message) => {
+bot.on("voice", (message) => {
   if (message?.voice?.file_id) {
     const stream = bot.getFileStream(message.voice?.file_id);
 
